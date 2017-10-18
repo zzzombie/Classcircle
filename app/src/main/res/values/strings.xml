@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ClassCircle</string>
+    <string name="user_name_error">用户名不合法，3到20位，首字符必须是字母</string>
+    <string name="password_error">密码不合法，必须是3到20位的数字</string>
+    <string name="confirm_password_error">密码和确认密码不一致</string>
+    <string name="registering">正在注册...</string>
+    <string name="logining">正在登陆...</string>
+</resources>

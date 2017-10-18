@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tab
+        id="@+id/tab_home"
+        icon="@mipmap/tab_home"
+        activecolor="@mipmap/tab_home2"
+        />
+    <tab
+        id="@+id/tab_message"
+        icon="@mipmap/tab_msg"
+        activecolor="@mipmap/tab_msg2"/>
+    <tab
+        id="@+id/tab_discover"
+        icon="@mipmap/tab_discover"/>
+    <tab
+        id="@+id/tab_mine"
+        icon="@mipmap/tab_mine"/>
+</tabs>

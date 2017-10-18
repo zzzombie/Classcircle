@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@mipmap/ic_launcher"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/register_edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@null"
+        android:hint="账号"
+        android:inputType="textAutoComplete"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp"
+        android:textColorHint="#b3b3b0"
+        android:textSize="15sp"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/register_edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@null"
+        android:hint="密码"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp"
+        android:textColorHint="#b3b3b0"
+        android:textSize="15sp"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/register_edt_compassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@null"
+        android:hint="确认密码"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp"
+        android:textColorHint="#b3b3b0"
+        android:textSize="15sp"
+        android:imeOptions="actionDone"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/register_btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#87a4f9"
+        android:elevation="5dp"
+        android:text="注   册"
+        android:textColor="#FFFFFF"
+        android:imeOptions="actionDone"/>
+
+</LinearLayout>
