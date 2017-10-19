@@ -4,12 +4,10 @@
     <tab
         id="@+id/tab_home"
         icon="@mipmap/tab_home"
-        activecolor="@mipmap/tab_home2"
         />
     <tab
         id="@+id/tab_message"
-        icon="@mipmap/tab_msg"
-        activecolor="@mipmap/tab_msg2"/>
+        icon="@mipmap/tab_msg"/>
     <tab
         id="@+id/tab_discover"
         icon="@mipmap/tab_discover"/>

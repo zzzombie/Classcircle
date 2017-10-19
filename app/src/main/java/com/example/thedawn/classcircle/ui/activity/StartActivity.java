@@ -1,8 +1,9 @@
-package com.example.thedawn.classcircle;
+package com.example.thedawn.classcircle.ui.activity;
 
 import android.content.Intent;
 import android.os.SystemClock;
 
+import com.example.thedawn.classcircle.R;
 import com.example.thedawn.classcircle.presenter.StartPresenter;
 import com.example.thedawn.classcircle.presenter.impl.StartPresenterImpl;
 import com.example.thedawn.classcircle.view.StartView;
@@ -21,9 +22,8 @@ public class StartActivity extends BaseActivity implements StartView{
     }
 
     @Override
-    protected void initData() {
-
-
+    protected void init() {
+        super.init();
         mStartPresenter = new StartPresenterImpl(this);
         mStartPresenter.checkLoginStatus();
     }
@@ -38,15 +38,6 @@ public class StartActivity extends BaseActivity implements StartView{
         }.start();
     }
 
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    public void initview() {
-
-    }
 
     private void enterLoginActivity() {
         Intent intent = new Intent(this,LoginActivity.class);

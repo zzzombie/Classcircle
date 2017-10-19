@@ -1,4 +1,4 @@
-package com.example.thedawn.classcircle;
+package com.example.thedawn.classcircle.ui.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,20 +22,16 @@ public abstract class BaseActivity extends AppCompatActivity{
         setContentView(getlayoutRes());
         ButterKnife.bind(this);
 
-        initview();
-        initListener();
-        initData();
+
+        init();
     }
 
     public abstract int getlayoutRes();
     /*初始化数据*/
-    protected abstract void initData();
+    protected  void init(){
 
-    /*设置监听器*/
-    protected abstract void initListener();
+    }
 
-    /*查找子控件*/
-    public abstract void initview();
 
     private Toast mToast;
 

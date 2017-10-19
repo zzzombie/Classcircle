@@ -1,4 +1,4 @@
-package com.example.thedawn.classcircle;
+package com.example.thedawn.classcircle.ui.activity;
 
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.thedawn.classcircle.R;
 import com.example.thedawn.classcircle.presenter.RegisterPresenter;
 import com.example.thedawn.classcircle.presenter.impl.RegisterPresenterImpl;
 import com.example.thedawn.classcircle.view.RegisterView;
@@ -34,7 +35,8 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
     }
 
     @Override
-    protected void initData() {
+    protected void init() {
+        super.init();
         mRegisterPresenter = new RegisterPresenterImpl(this);
         //设置软键盘ACTION的监听器，用户输入完确认密码后，点击软件盘的完成按钮，同样触发注册
         mRegisterEdtCompassword.setOnEditorActionListener(mOnEditorActionListener);
@@ -51,15 +53,6 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
         }
     };
 
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    public void initview() {
-
-    }
 
 
 

@@ -1,4 +1,4 @@
-package com.example.thedawn.classcircle;
+package com.example.thedawn.classcircle.ui.activity;
 
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.thedawn.classcircle.R;
 import com.example.thedawn.classcircle.utils.ThreadUtils;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
@@ -61,20 +62,9 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
-
+    protected void init(){
+        super.init();
     }
-
-    @Override
-    protected void initListener() {
-
-    }
-
-    @Override
-    public void initview() {
-
-    }
-
 
 
     @OnClick({R.id.login_btn_login, R.id.login_register})
