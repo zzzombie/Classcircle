@@ -80,8 +80,6 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void login() {
-
-
         showProgressDialog(getString(R.string.logining));
         hideKeyboard();
         String userName = mLoginEdtUsername.getText().toString().trim();
@@ -103,7 +101,6 @@ public class LoginActivity extends BaseActivity {
                         goTo(MainActivity.class);
                     }
                 });
-
             }
 
             @Override

@@ -1,7 +1,7 @@
 package com.example.thedawn.classcircle.ui.activity;
 
 import android.content.Intent;
-import android.os.SystemClock;
+import android.os.Handler;
 
 import com.example.thedawn.classcircle.R;
 import com.example.thedawn.classcircle.presenter.StartPresenter;
@@ -13,6 +13,10 @@ import com.example.thedawn.classcircle.view.StartView;
  */
 
 public class StartActivity extends BaseActivity implements StartView{
+
+    private Handler mHandler = new Handler();
+
+    private static final int DELAY = 2000;
 
     private StartPresenter mStartPresenter;
 
@@ -29,18 +33,24 @@ public class StartActivity extends BaseActivity implements StartView{
     }
 
     private void navigateToLogin(){
-        new Thread(){
+        /*new Thread(){
             @Override
             public void run() {
                 SystemClock.sleep(1500);
                 enterLoginActivity();
             }
-        }.start();
+        }.start();*/
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                enterLoginActivity();
+            }
+        },DELAY);
     }
 
 
     private void enterLoginActivity() {
-        Intent intent = new Intent(this,LoginActivity.class);
+        Intent intent = new Intent(StartActivity.this,LoginActivity.class);
         startActivity(intent);
         finish();
     }

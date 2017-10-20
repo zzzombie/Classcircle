@@ -67,7 +67,7 @@ public class RegisterPresenterImpl implements RegisterPresenter {
                 if(e == null){
                     //注册成功
                     // 通知view层注册成功
-                    mRegisterView.onRegisterSuccess();
+//                    mRegisterView.onRegisterSuccess();
                     //注册环信
                     registerEaseMob(userName,password);
                 }else {

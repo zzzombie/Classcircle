@@ -60,6 +60,4 @@ public class MainActivity extends BaseActivity {
             fragmentTransaction.commit();
         }
     };
-
-
 }

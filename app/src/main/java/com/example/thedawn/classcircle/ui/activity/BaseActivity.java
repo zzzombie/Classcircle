@@ -46,6 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     public void goTo(Class activity){
         Intent intent = new Intent(this,activity);
         startActivity(intent);
+        finish();
     }
         /*
         * 弹出进度条
