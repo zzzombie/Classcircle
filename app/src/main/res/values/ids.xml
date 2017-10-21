@@ -7,4 +7,6 @@
     <item name="back" type="id"/>
     <item name="add" type="id"/>
     <item name="logout" type="id"/>
+    <item name="mine_user" type="id"/>
+    <item name="recycler_view" type="id"/>
 </resources>

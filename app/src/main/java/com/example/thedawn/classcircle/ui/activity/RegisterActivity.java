@@ -106,4 +106,10 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
     public void onStartRegister() {
         showProgressDialog(getString(R.string.registering));
     }
+
+    @Override
+    public void onUserNameExist() {
+        hideProgrssDialog();
+        showToast(getString(R.string.user_name_exist));
+    }
 }

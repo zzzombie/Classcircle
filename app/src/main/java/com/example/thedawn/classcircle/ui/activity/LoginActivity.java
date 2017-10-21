@@ -1,6 +1,10 @@
 package com.example.thedawn.classcircle.ui.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.thedawn.classcircle.R;
 import com.example.thedawn.classcircle.utils.ThreadUtils;
@@ -56,6 +61,8 @@ public class LoginActivity extends BaseActivity {
     @BindView(R.id.linear_layout_btn_register)
     LinearLayout mLinearLayoutBtnRegister;
 
+    private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE = 0;
+
     @Override
     public int getlayoutRes() {
         return R.layout.activity_login;
@@ -71,12 +78,30 @@ public class LoginActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_btn_login:
-                login();
+                //判断用户是否有写磁盘的权限
+                if (hasWriteExternalStoragePermission()) {
+                    login();
+                } else {
+                    //申请权限
+                    applyWriteExternalStoragePermission();
+                }
                 break;
             case R.id.login_register:
                 goTo(RegisterActivity.class);
                 break;
         }
+    }
+
+    private void applyWriteExternalStoragePermission() {
+        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_WRITE_EXTERNAL_STORAGE);
+    }
+
+    /*
+    * 检查是否有读写磁盘的权限
+    * */
+    private boolean hasWriteExternalStoragePermission() {
+        return PackageManager.PERMISSION_GRANTED == ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 
     private void login() {
@@ -119,5 +144,20 @@ public class LoginActivity extends BaseActivity {
                 });
             }
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode) {
+            case REQUEST_CODE_WRITE_EXTERNAL_STORAGE:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    login();
+                } else {
+                    Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

@@ -2,6 +2,7 @@ package com.example.thedawn.classcircle.presenter.impl;
 
 import android.util.Log;
 
+import com.example.thedawn.classcircle.app.Constant;
 import com.example.thedawn.classcircle.presenter.RegisterPresenter;
 import com.example.thedawn.classcircle.utils.StringUtils;
 import com.example.thedawn.classcircle.utils.ThreadUtils;
@@ -116,12 +117,17 @@ public class RegisterPresenterImpl implements RegisterPresenter {
                     //注册失败
                     //在主线程通知view注册失败
                     Log.d(TAG, "run: 注册失败");
-                    ThreadUtils.runOnMainThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mRegisterView.onRegisterFaild();
-                        }
-                    });
+                    if (e.getErrorCode() == Constant.ErrorCode.USER_ALREADY_EXIST){
+                        mRegisterView.onUserNameExist();
+                    }else {
+                        ThreadUtils.runOnMainThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mRegisterView.onRegisterFaild();
+                            }
+                        });
+                    }
+
                 }
             }
         });
