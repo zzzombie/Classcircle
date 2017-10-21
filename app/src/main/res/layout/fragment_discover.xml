@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
@@ -7,12 +7,160 @@
     <!--<include layout="@layout/title_bar"/>-->
 
     <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/classfragment_linearLyout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:id="@+id/classfragment_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/class_bgimg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@mipmap/class_background"/>
+            <ImageView
+                android:id="@+id/class_more"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/more"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="125dp">
+
+                <TextView
+                    android:id="@+id/class_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15软件1班"
+                    android:textSize="29sp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/white"
+                    />
+                <TextView
+                    android:id="@+id/class_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111222333"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/qr_code"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@mipmap/qr_code"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="130dp"
+                android:layout_marginRight="15dp"/>
+
+        </RelativeLayout>
+
+<include layout="@layout/main_function"/>
+
+        <!--<view-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/line"/>-->
+        <include layout="@layout/layout_line"/>
+
+        <RelativeLayout
+            android:id="@+id/class_my_namecard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的名片"
+                android:layout_margin="10dp"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/class_mynickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="dawn"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="20dp"/>
+
+            <ImageView
+                android:id="@+id/class_arrow_right"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/ic_arrow_right"/>
+
+        </RelativeLayout>
+
+        <include layout="@layout/layout_line"/>
+
+        <RelativeLayout
+            android:id="@+id/class_member"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="onClick">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/member"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                />
+
+            <ImageView
+                android:id="@+id/class_firstmember_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/class_secondmember_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/class_countclassmember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="%s名成员"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_arrow_right"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <include layout="@layout/layout_line"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
